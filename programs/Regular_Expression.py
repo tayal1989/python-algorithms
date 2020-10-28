@@ -1,16 +1,35 @@
 import re
 
 ################Simple Example########################
-print(re.split(r'\s*', 'Here  * are some words'))   # \s is signifying space character, even we are using multiple spaces after Here, it is considering as
-                                                   # a single space
-                                                # * - 0 or more - any no of characters
-                                                # O/P - ['Here', '*', 'are', 'some', 'words']
+'''
+\s is signifying space character, even we are using multiple spaces after Here, it is considering as a single space
+O/P - ['I', 'am', 'a', 'good', 'boy']
+'''
+print(re.split(r'\s', "I am a good boy"))
 
-print(re.split(r'(\s*)', 'Here are some words'))   # () - used for grouping or including, actually including space in the output list
-                                                  # O/P - ['Here', ' ', 'are', ' ', 'some', ' ', 'words']
+'''
+* - 0 or more - any no of characters
+O/P - ['', 'I', '', 'a', 'm', '', 'a', '', 'g', 'o', 'o', 'd', '', 'b', 'o', 'y', '']
+'''
+print(re.split(r'\s*', "I am  a good boy"))
 
-print(re.split(r'(s*)', 'Here are some words'))   # / is missing - means string will split on basis of word 's'
-                                                 # ['Here are ', 's', 'ome word', 's', '']
+'''
+() - used for grouping or including, actually including space in the output list
+O/P = ['Here', ' ', 'are', ' ', 'some', ' ', 'words']
+'''
+print(re.split(r'(\s)', "Here are some words"))
+
+'''
+O/P = ['', '', 'H', '', 'e', '', 'r', '', 'e', ' ', '', '', 'a', '', 'r', '', 'e', ' ', '', '', 
+'s', '', 'o', '', 'm', '', 'e', ' ', '', '', 'w', '', 'o', '', 'r', '', 'd', '', 's', '', '']
+'''
+print(re.split(r'(\s*)', 'Here are some words'))
+
+'''
+O/P = ['', '', 'H', '', 'e', '', 'r', '', 'e', ' ', '', '', 'a', '', 'r', '', 'e', ' ', '', '', 
+'s', '', 'o', '', 'm', '', 'e', ' ', '', '', 'w', '', 'o', '', 'r', '', 'd', '', 's', '', '']
+'''
+print(re.split(r'(s*)', 'Here are some words'))
 
 #######################################################
 
