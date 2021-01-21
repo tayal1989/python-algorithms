@@ -1,0 +1,5 @@
+hari=10
+john=20
+manu=30
+ravi=40
+amit=50

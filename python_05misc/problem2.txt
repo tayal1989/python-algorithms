@@ -1,0 +1,5 @@
+501 sales
+502 purch
+503 accts
+504 finan
+505 hrd

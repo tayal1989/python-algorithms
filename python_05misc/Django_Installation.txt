@@ -1,0 +1,26 @@
+1) Install Python2.7 and set path as environment variables
+2) Install pip - python get-pip.py install
+3) Install virtualenv - pip install virtualenv
+4) Create virtualenv folder after going to the path, where you want to create it. Suppose you want to create virtualenv in D:\ drive.
+	- D:\
+	- virtualenv <folder_name>
+	- e.g. virtualenv djangoworld
+5) Activate the virtualenv. Go to djangoworld dir.
+	- cd Scripts
+	- activate
+6) For deactivating, use command
+	- deactivate
+7) Install django after activating the djangoworld
+	- pip install django
+8) "pip freeze" command is used to check the packages installed
+9) To start a project, go to djangoworld and run
+	- python Scripts\django-admin.py startproject <project_name>
+	- e.g. python Scripts\django-admin.py startproject test_project
+10) test_project will be created inside djangoworld
+11) To run a project on test server, run command inside test_project folder
+	- python manage.py runserver
+12) Sync the project with mysql database, run following command inside test_project folder:
+	- python manage.py syncdb
+13) To go to web page, "http://127.0.0.1:8000", admin page, "http://127.0.0.1:8000/admin"
+14) Django IDE : Komodo, Sublime, PyCharm. Tutor took Komodo IDE
+15) Django Tutorials : https://www.youtube.com/watch?v=3DccH9AMwFQ
