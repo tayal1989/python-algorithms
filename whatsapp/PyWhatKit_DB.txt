@@ -1,0 +1,15 @@
+Date: 30/3/2023
+Time: 12:58
+Phone Number: +919996914864
+Message: Yo! from Python
+--------------------
+Date: 30/3/2023
+Time: 13:0
+Phone Number: +919996914864
+Message: Yo! from Python
+--------------------
+Date: 30/3/2023
+Time: 13:1
+Phone Number: +919996914864
+Message: Sending WhatsApp message through Python code
+--------------------
