@@ -1,0 +1,10 @@
+# PDF Processing Dependencies
+pypdf>=3.0.0
+
+# Optional: Alternative PDF libraries (uncomment if needed)
+# PyPDF2>=3.0.0
+# pdfplumber>=0.7.0
+
+# Common utilities that might be useful for PDF processing
+# Pillow>=9.0.0  # For image processing if needed
+# reportlab>=3.6.0  # For PDF creation 
