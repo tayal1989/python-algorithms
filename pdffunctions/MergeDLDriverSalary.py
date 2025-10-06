@@ -23,7 +23,7 @@ def merge_pdfs(file1, file2, output_file):
 
 folder_path = "/Users/vishalagarwal/personal/receipts/driver-salary/"
 file1 = folder_path + 'NainaCarDL.pdf'
-file2 = folder_path + '2025-26/' + '2025-11-Driver-Salary.pdf'
-output_file = folder_path + '2025-26/' + '2025-11-DL-Driver-Salary.pdf'
+file2 = folder_path + '2025-26/' + '2026-03-Driver-Salary.pdf'
+output_file = folder_path + '2025-26/' + '2026-03-DL-Driver-Salary.pdf'
 
 merge_pdfs(file1, file2, output_file)

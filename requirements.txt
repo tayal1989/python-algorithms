@@ -6,5 +6,5 @@ pypdf>=3.0.0
 # pdfplumber>=0.7.0
 
 # Common utilities that might be useful for PDF processing
-# Pillow>=9.0.0  # For image processing if needed
+Pillow>=9.0.0  # For image processing and advanced PDF compression
 # reportlab>=3.6.0  # For PDF creation 
