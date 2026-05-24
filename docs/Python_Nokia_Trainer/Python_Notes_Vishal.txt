@@ -1,0 +1,477 @@
+========================================================================================
+Features of Python:
+ - Python has a rich library - pypi python.org(www.pypi.python.org)
+ - Easy to learn
+ - Portable
+ - Procedural
+ - Object Oriented
+ - Function Programming
+ - Extended with C, C++ easily
+ - Embedded
+ - Data pool is shared across the processes. Python maintains the data pool
+ - Everything in python is shallow copy as data pool is shared across the processes.
+========================================================================================
+ 
+======================================================================================== 
+Implementation of Python
+ - CPython
+ - Jython
+ - IronPython
+ - pypy
+ - stackclass
+========================================================================================
+ 
+========================================================================================
+When Python program is compiled using C, it will generate ".pyc" file.
+When Python program is compiled using Java, it will generate ".class" file.
+Garbage collector(gc) of python will take care of memory management in Python when it integrates with C.
+Garbage collector(gc) of Java will take care of memory management in Python when it integrates with Java.
+========================================================================================
+
+========================================================================================
+										 ---> Thread1
+										 ---> Thread2
+Python ---> GIL(Global Interpreter Lock) ---> Thread3
+										 ---> Thread4
+										 ---> Thread5
+										 
+Limitation of Python:
+Only serial threads will work in Python. However, using Coro Threads, we can remove this limitation and can use multi threading in python.
+========================================================================================
+
+========================================================================================
+Class = Entity = Attributes + Behaviour
+Class = Data Members + Method
+========================================================================================
+
+========================================================================================
+Heap(holds dynamic variables) ---> Stack(holds local variables) ---> Data(holds global variables) ---> Code
+If we have to allocate memory in C, we will use malloc
+If we have to allocate memory in Java, we will use new
+
+All values in Python are heap based.
+========================================================================================
+
+========================================================================================
+Python Code ---> Interpreter (Compiles ---> ByteCodes ---> PVM(Python Virtual Machine)) ---> Output
+========================================================================================
+
+========================================================================================
+Classes can be categorized into two parts:
+ - Immutable(constant values) e.g. int, long, str, float, tuple, bool, Nonetype
+		- value changes, id also changes
+ - Mutable(non-constant values) e.g. list, bytearray, dictionary, set
+		- value changes, id doesn't change
+========================================================================================
+
+========================================================================================
+a=10
+id(a) ---> 78304
+b=a
+id(b) ---> 78304
+c=10
+id(c) ---> 78304
+It means value or data pool is shared across the processes.
+========================================================================================
+
+========================================================================================
+Autovivify - assign a value, variable gets defined
+Based on the value, it's data type gets allocated
+========================================================================================
+
+========================================================================================
+Whenever the interval is negative, the interval starts from maximum to minimum
+========================================================================================
+
+========================================================================================
+xrange(start, end - 1, interval)
+
+>>> range(1,11).__sizeof__()		# As it can hold 10 values, so 10 * 4 = 40 + 20(size of garbage collector)
+60
+>>> xrange(1,11).__sizeof__()		# It only shows size of garbage collector
+20
+>>> range(1,101).__sizeof__()		# As it can hold 10 values, so 100 * 4 = 400 + 20(size of garbage collector)
+420
+========================================================================================
+
+========================================================================================
+Tuple unpacking
+>>> a, b = 10, 20
+>>> a
+10
+>>> b
+20
+========================================================================================
+
+========================================================================================
+Swap two variables
+a, b = b, a
+========================================================================================
+
+========================================================================================
+Unsigned char array in python is called as byte array
+a = bytearray()
+ - Mutable
+ - index, sliced, iterable
+ - holds positive value b/w 0 to 255
+========================================================================================
+
+========================================================================================
+list
+a = [10, 20, 30, 40]
+ - mutable
+ - index, sliced, iterable
+ - a.append(10)
+ - a.extend([50, 60, 70])
+========================================================================================
+
+========================================================================================
+Which is better ?
+a = [10, 20, 30]
+b = [40, 50, 60]
+a = a + b	# Scenario 1
+a.append(b) # Scenario 2
+
+
+Ans : a.append(b) is better because of expanding its size rather than reallocation and deallocation of memory
+a = [10, 20, 30]
+b = [40, 50, 60]
+print("Before", id(a))
+a.append(b) # Scenario 2
+print("After", id(a))
+========================================================================================
+
+========================================================================================
+int - 	im-mutable
+		not iterable
+		
+float - im-mutable
+		not iterable
+		
+str -	im-mutable
+		iterable
+		
+tuple - im-mutable
+		iterable
+		
+list -	mutable
+		iterable
+		
+dict -	mutable
+		iterable
+		
+file -	iterable-class
+========================================================================================
+
+========================================================================================
+Declare a list with 10 elements
+every element initialized to zero
+
+a = [0] * 10
+
+Replace the first 4 elements of the array by "*"
+
+a = [1,2,3,4,5,6,7,8]
+a[0:4] = "*" * 4
+
+
+>>> a = [1,2,3,4,5,6,7,8]
+>>> id(a)
+51849736
+>>> a[0:8] = "*" * len(a)
+>>> a
+['*', '*', '*', '*', '*', '*', '*', '*']
+>>> id(a)
+51849736
+========================================================================================
+
+========================================================================================
+input: a = [1, 2, 3, 4, 5, 6]
+Output: a = [4, 5, 6, 1, 2, 3]
+
+Ans:
+a[0:3],a[3:] = a[3:], a[0:3]
+
+Delete the first 4 elements
+del a[0:4]
+
+Declare a LIST with 100 elements 
+every element init to 1-100
+
+arr = list(range(1, 101))
+========================================================================================
+
+========================================================================================
+Functions
+ - map
+ - filter
+ - reduce
+ - partial function
+ - comprehension
+========================================================================================
+
+========================================================================================
+One liner Functions can be replaced by LAMBDA expression
+def fun(a,b):
+	return a*b
+
+LAMBDA function:
+fun1 = lambda x,y : x * y
+print(fun1(2, 3))
+========================================================================================
+
+========================================================================================
+Dictionary
+ - are unordered
+ - Diff between list and dict is index are given by user in dict and index gets automatically associated with list
+zones = {10, 20, 30, 40} ---->  values
+		north south east west	----> index
+		
+Read = zones['south'] ---> 20
+Overwrite = zones['west'] = 50
+
+zones = {
+		'n' : 10,
+		's' : 20,
+		'e' : 30,
+		'w' : 40
+		}
+========================================================================================
+
+========================================================================================
+Set:
+ - Mutable
+ - index & slicing not allowed
+ - is iterable
+ - eliminate the duplicates
+ - unordered data structure like dict
+ - can perform following function
+	- union
+	- difference
+	- intersection
+	- issubset
+	- issuperset
+
+What is common b/w a & b ?
+a = [10, 20, 30]
+a = [40, 50, 30]
+
+res = set(a) & set(b)
+print(res)
+
+What is unique b/w a & b ?
+print(set(a) - set(b))
+
+What is union b/w a & b ?
+print(set(a) | set(b))
+========================================================================================
+
+========================================================================================
+Deep copy
+import copy
+arr = [1, 2, 3, 4, 5]
+temp = arr[:] 	#Deep copy a simple list
+temp = copy.deepcopy(arr)  	#Universal deep copy
+
+Shallow copy is used to copy the address of the variable and therefore value gets copied. However, in case of deep copy, value gets copied not address.
+So in case, we have to delete the parent variable, then shallow copy value also gets deleted but deep copy value remains.
+========================================================================================
+
+========================================================================================
+fob(how many place you want to move, current position)
+Go to beginning of file(BOF):
+fob.seek(0, 0)
+Go to end of file(EOF):
+fob.seek(0, 2)
+
+How many bytes you have moved from the beginning of file ?
+fob.tell()
+========================================================================================
+
+========================================================================================
+Text ASCII File						Binary File
+i) Supports \n							-
+ii) Supports EOF						-
+iii) It goes char by char			It takes values as int, char,  float i.e. it preserves the contents
+========================================================================================
+
+========================================================================================
+with open("filelocation", "w") as f1:
+	with block
+	with block
+	
+Using with, we don't have to mention open and closing of the file
+========================================================================================
+
+========================================================================================
+stringbuff = fob.read()
+stringbuff = fob.read(20)
+stringbuff = fob.readline()
+listbuff = fob.readlines()
+
+f1.write(stringbuff)
+f1.writeline(listbuff)
+========================================================================================
+
+========================================================================================
+Difference between map and filter is map will give you all the values even if it is false or None
+however, filter will separate the values or will not display the values who are either None or False
+========================================================================================
+
+========================================================================================
+Reduce is used as a recursive function and the return type is not a list, it will return as integer
+Within reduce, lambda expects two arguments while in map and filter lambda expects one argument
+========================================================================================
+
+========================================================================================
+key - faster
+comparator - slow
+========================================================================================
+
+========================================================================================
+Functions
+ - func should be defined before it is called
+ - Func can return more than one value - Tuple
+ - Func block is exec only when you call it
+ 
+Scope of variable
+By default all variables in python are global so if we have to make a variable local, then declare the variable inside a function
+========================================================================================
+
+========================================================================================
+Function can be classified into two parts :
+ - Positional arguments
+	- strict with no of arguments
+	- order of argument is important
+ - Default arguments
+	- right to left
+ ex:
+ 
+ def add_data(code = 0, name = "NoName", dept = "sales"):
+	print("code = ", code)
+	print("name = ", name)
+	print("Dept = ", dept)
+	
+ add_data(1, 'arun', 'sales')
+ add_data()
+ add_data(5)
+ add_data(10, 'hari')
+ 
+ - Keyword Arguments
+	- keyword argument should be followed by a keyword argument
+	- Never take list and dictionary in keyword arguments because default arguments are set only once in the Python
+ def fun(code, name = '', dept = 'sales'):
+	pass
+
+ fun(10, dept = 'finance')
+ fun(10, dept = 'finance', name = 'hari')
+========================================================================================
+
+========================================================================================
+If you want to compile a python file without running, then use import as when you import the files, it will automatically compile the files
+Import Files in different ways(v1 = Vendor1, v2 = Vendor2)
+ - import v1
+	v1.init()
+	
+ - import v1 as v
+	v.init()
+	
+ - from v1 import init
+	init()
+	
+ - from v1 import *
+	init()
+	clean()
+	
+ - from v1 import *
+   from v2 import *
+   start()
+   init()
+   clean()		# It will call clean from v2 as v2 will replace all the function present in v1 having same function name
+   
+   To remove this problem, use below approach :
+   from v1 import *
+   from v2 import *
+   from v1 import clean as v1clean
+   start()
+   init()
+   v1clean()
+   
+========================================================================================
+
+========================================================================================
+Module
+ - Collection of methods is known as module
+========================================================================================
+
+========================================================================================
+Class
+Classname.Methodname(objectname, yourarguments)
+
+Access private data member
+self.__attributename
+
+There is no encapsulation in Python/Perl
+
+self.name = public				#Interpreter supports it
+self._name = semiprivate		#Naming convention, Internal method, API development
+self.__name = private			#Interpreter supports it, _classname__attributename
+========================================================================================
+
+========================================================================================
+Python supports Multiple Inheritance
+It is solved by MRO(Method Resolution Order). Approach :
+ - Bottom to top
+ - Left to right
+ 
+========================================================================================
+
+========================================================================================
+Treat object like a string
+	def __str__(self):
+========================================================================================
+
+========================================================================================
+User defined exceptions in Python:
+ class myExp(Exception):
+	def __init__(self, msg = None):
+		Exception.__init__(self.msg)
+========================================================================================
+
+========================================================================================
+Multi-threading and multi-processing :
+CPU bound jobs - Process
+I/O bound jobs - Thread
+========================================================================================
+
+========================================================================================
+Python multiprocessing
+ - It is parallel on multicore architecture also
+ - It is dependant on subprocess module
+========================================================================================
+
+========================================================================================
+Python tools
+ - Unit Testing ---> procedural and classes
+ - Debug
+ - Documentation ---> Doctest
+	python -m doctest filename.py
+ - Benchmarking
+	- trace(python -m trace --count filename.py) --> It will tell which line executed how many times
+		   (python -m trace --trace filename.py) --> It will tell line output
+	- timeit(python -m timeit -s "d={}" "for i in range(1000):" "d[str[i]]=i")
+ - Install
+ - Distribute
+ 
+ To distribute a module name "MyMath.py"
+ Contents of Setup.py
+ 
+ from distutils.core import setup
+ 
+ setup(name = 'MyMath',
+		version = '2.0',
+		py_modules=['MyMath'],)
+ 
+ python setup.py sdist
+ [will create archive named MyMath.tar.gz or .zip]
+========================================================================================
